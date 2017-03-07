@@ -1,10 +1,3 @@
-*&---------------------------------------------------------------------*
-*& Report  ZFOOBAR
-*&
-*&---------------------------------------------------------------------*
-*&
-*&
-*&---------------------------------------------------------------------*
 REPORT zaof_test01.
 
 START-OF-SELECTION.
@@ -15,12 +8,11 @@ FORM run.
   WRITE: / 'sdf'
   .
 
-  CALL FUNCTION 'POPUP_TO_CONFIRM'
-    EXPORTING
-      text_question  = 'hello world'
-    EXCEPTIONS
-      text_not_found = 1
-      OTHERS         = 2
-      .
+  cl_system_uuid=>if_system_uuid_static~create_uuid_c22(
+  ).
+
+  DATA: foo TYPE c.
+  DATA: bar TYPE i.
+  DATA: moo TYPE p.
 
 ENDFORM.
