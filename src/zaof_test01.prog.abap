@@ -3,7 +3,7 @@ REPORT zaof_test01.
 START-OF-SELECTION.
   PERFORM run.
 
-FORM run.
+FORM run RAISING cx_uuid_error.
 
   WRITE: / 'sdf'
   .
