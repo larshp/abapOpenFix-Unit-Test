@@ -3,16 +3,14 @@ REPORT zaof_test02.
 START-OF-SELECTION.
   PERFORM run.
 
-FORM run RAISING cx_uuid_error.
+FORM run.
 
-  WRITE: / 'sdf'
-  .
+  DATA: lv_result TYPE abap_bool.
 
-  cl_system_uuid=>if_system_uuid_static~create_uuid_c22(
-  ).
+  lv_result = cl_gui_frontend_services=>check_gui_support(
+    EXPORTING
+      component = 'ASDF' ).
 
-  DATA: foo TYPE c.
-  DATA: bar TYPE i.
-  DATA: moo TYPE p.
+  WRITE: / lv_result.
 
 ENDFORM.
