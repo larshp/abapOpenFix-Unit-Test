@@ -13,6 +13,5 @@ FORM run RAISING cx_uuid_error.
 
   DATA: foo TYPE c.
   DATA: bar TYPE i.
-  DATA: moo TYPE p.
 
 ENDFORM.
